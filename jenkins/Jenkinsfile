@@ -4,12 +4,6 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Install Dependencies') {
-            steps {
-                // Install pytest and other requirements from the repo
-                sh 'pip3 install --user -r requirements.txt'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'python3 -m py_compile sources/add2vals.py sources/calc.py'
